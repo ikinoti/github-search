@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-github-profile',
   templateUrl: './github-profile.component.html',
-  styleUrls: ['./github-profile.component.css']
+  styleUrls: ['./github-profile.component.css'],
 })
 export class GithubProfileComponent implements OnInit {
+  @Input() githubProfile: any;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
