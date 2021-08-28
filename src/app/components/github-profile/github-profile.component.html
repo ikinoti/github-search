@@ -1,1 +1,60 @@
-<p>github-profile works!</p>
+<div class="container-fluid mt-4" id="profile">
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          [src]="githubProfile.avatar_url"
+          class="img-fluid rounded-start"
+          alt=""
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ githubProfile.login }}</h5>
+          <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-primary btn-sm" type="button">
+              Followers
+              <span class="badge bg-secondary">{{
+                githubProfile.followers
+              }}</span>
+            </button>
+            <button class="btn btn-primary btn-sm" type="button">
+              Following
+              <span class="badge bg-secondary">{{
+                githubProfile.following
+              }}</span>
+            </button>
+            <button class="btn btn-primary btn-sm" type="button">
+              Public Repos
+              <span class="badge bg-secondary">{{
+                githubProfile.public_repos
+              }}</span>
+            </button>
+            <button class="btn btn-primary btn-sm" type="button">
+              Public Gists
+              <span class="badge bg-secondary">{{
+                githubProfile.public_gists
+              }}</span>
+            </button>
+          </div>
+
+          <p class="card-text">
+            {{ githubProfile.bio }}
+          </p>
+          <p class="card-text">
+            <small class="text-muted">{{
+              githubProfile.created_at | date
+            }}</small>
+          </p>
+          <a
+            [href]="githubProfile.html_url"
+            class="btn btn-primary"
+            target="_blank"
+          >
+            Github Profile</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
