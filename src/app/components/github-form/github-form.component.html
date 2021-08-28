@@ -4,10 +4,12 @@
       <div class="card">
         <h5 class="card-header">Github User Search</h5>
         <div class="card-body">
-          <form class="row g-3">
+          <form class="row g-3" (submit)="userSearch()">
             <div class="col-12">
               <label for="username" class="form-label">Github Username</label>
               <input
+                name="username"
+                [(ngModel)]="userQuery"
                 type="text"
                 class="form-control"
                 id="username"
@@ -20,6 +22,16 @@
           </form>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="githubProfile">
+    <div class="col">
+      <app-github-profile [githubProfile]="githubProfile"></app-github-profile>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md">
+      <app-github-repos [githubRepos]="githubRepos"></app-github-repos>
     </div>
   </div>
 </div>
