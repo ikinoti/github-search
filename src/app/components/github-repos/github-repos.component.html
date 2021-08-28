@@ -1,1 +1,25 @@
-<p>github-repos works!</p>
+<h2>Repositories</h2>
+<div
+  *ngIf="githubRepos"
+  class="row row-cols-1 row-cols-md-4 g-4 mt-3 card-group"
+>
+  <div class="col" *ngFor="let repo of githubRepos">
+    <div class="card">
+      <h5 class="card-header">{{ repo.name }}</h5>
+      <div class="card-body">
+        <p class="card-text">
+          {{ repo.description }}
+        </p>
+        <a [href]="repo.html_url" class="btn btn-primary" target="_blank"
+          >Code</a
+        ><a
+          [href]="repo.homepage"
+          *ngIf="repo.homepage"
+          class="btn btn-primary"
+          target="_blank"
+          >Demo</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
