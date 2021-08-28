@@ -22,4 +22,14 @@ export class GithubSearchService {
       .get<any>(profileURL)
       .pipe(retry(1), catchError(this.errorHandler));
   }
+
+  public errorHandler(error: HttpErrorResponse) {
+    let errMessage: string;
+    if (error.error instanceof ErrorEvent) {
+      errMessage = `MESSAGE:${error.error.message}`;
+    } else {
+      errMessage = `STATUS:${error.status} MESSAGE:${error.message}`;
+    }
+    return throwError(errMessage);
+  }
 }
