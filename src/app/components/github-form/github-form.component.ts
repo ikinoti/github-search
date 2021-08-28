@@ -25,6 +25,15 @@ export class GithubFormComponent implements OnInit {
         this.errMessage = error;
       }
     );
+    // get repositoryies
+    this.githubSearchService.getRepos(this.userQuery).subscribe(
+      (data) => {
+        this.githubRepos = data;
+      },
+      (error) => {
+        this.errMessage = error;
+      }
+    );
   }
 
   ngOnInit(): void {}
