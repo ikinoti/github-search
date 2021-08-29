@@ -1,22 +1,41 @@
-<h2>Repositories</h2>
 <div
   *ngIf="githubRepos"
-  class="row row-cols-1 row-cols-md-4 g-4 mt-3 card-group"
+  class="
+    row row-cols-1 row-cols-md-4
+    g-4
+    mt-3
+    mb-5
+    shadow
+    rounded
+    pb-5
+    bg-light
+  "
 >
-  <div class="col" *ngFor="let repo of githubRepos">
+  <h3 class="col-12">Repositories</h3>
+  <div class="col card-group" *ngFor="let repo of githubRepos">
     <div class="card">
       <h5 class="card-header">{{ repo.name }}</h5>
-      <div class="card-body">
+      <div class="card-body" *ngIf="repo.description; else noDesc">
         <p class="card-text">
           {{ repo.description }}
         </p>
-        <a [href]="repo.html_url" class="btn btn-primary" target="_blank"
+      </div>
+      <ng-template #noDesc>
+        The repository Does not have a Description
+      </ng-template>
+      <div class="card-footer mb-0">
+        <a
+          [href]="repo.html_url"
+          class="btn btn-primary btn-sm"
+          target="_blank"
+          id="code"
           >Code</a
         ><a
           [href]="repo.homepage"
           *ngIf="repo.homepage"
-          class="btn btn-primary"
+          class="btn btn-primary btn-sm"
           target="_blank"
+          id="demo"
           >Demo</a
         >
       </div>
