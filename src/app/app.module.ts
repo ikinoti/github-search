@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { GithubProfileComponent } from './components/github-profile/github-profile.component';
 import { GithubFormComponent } from './components/github-form/github-form.component';
 import { GithubReposComponent } from './components/github-repos/github-repos.component';
+import { NavComponent } from './components/nav/nav.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, GithubProfileComponent, GithubFormComponent, GithubReposComponent],
+  declarations: [AppComponent, GithubProfileComponent, GithubFormComponent, GithubReposComponent, NavComponent, NotFoundComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
