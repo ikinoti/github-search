@@ -9,10 +9,16 @@ import { GithubProfileComponent } from './components/github-profile/github-profi
 import { GithubFormComponent } from './components/github-form/github-form.component';
 import { GithubReposComponent } from './components/github-repos/github-repos.component';
 import { NavComponent } from './components/nav/nav.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+// import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, GithubProfileComponent, GithubFormComponent, GithubReposComponent, NavComponent, NotFoundComponent],
+  declarations: [
+    AppComponent,
+    GithubProfileComponent,
+    GithubFormComponent,
+    GithubReposComponent,
+    NavComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
