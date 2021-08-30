@@ -11,18 +11,19 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class GithubSearchService {
+  private myKey = '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';
   constructor(private httpClient: HttpClient) {}
 
   // PROFILE
   public getProfile(searchQuery: any): Observable<any> {
-    let profileURL = `https://api.github.com/users/${searchQuery}?access_token=${environment.myKey}`;
+    let profileURL = `https://api.github.com/users/${searchQuery}?access_token=${this.myKey}`;
     return this.httpClient
       .get<any>(profileURL)
       .pipe(retry(1), catchError(this.errorHandler));
   }
   // REPOSITORIES
   public getRepos(searchQuery: any): Observable<any[]> {
-    let profileURL = `https://api.github.com/users/${searchQuery}/repos?access_token=${environment.myKey}`;
+    let profileURL = `https://api.github.com/users/${searchQuery}/repos?access_token=${this.myKey}`;
     return this.httpClient
       .get<any[]>(profileURL)
       .pipe(retry(1), catchError(this.errorHandler));
