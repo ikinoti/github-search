@@ -15,14 +15,12 @@
   <div class="col card-group" *ngFor="let repo of githubRepos">
     <div class="card">
       <h5 class="card-header">{{ repo.name }}</h5>
-      <div class="card-body" *ngIf="repo.description; else noDesc">
+      <div class="card-body">
         <p class="card-text">
           {{ repo.description }}
         </p>
       </div>
-      <ng-template #noDesc>
-        The repository Does not have a Description
-      </ng-template>
+
       <div class="card-footer mb-0">
         <a
           [href]="repo.html_url"
