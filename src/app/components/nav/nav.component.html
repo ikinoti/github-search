@@ -3,7 +3,7 @@
 </nav> -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand"><b>Github User search</b></a>
+  <a class="navbar-brand" routerLink="search"><b>Github User search</b></a>
   <button
     class="navbar-toggler"
     type="button"
@@ -17,9 +17,21 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active">Search</a>
-      <a class="nav-item nav-link active">Profile</a>
-      <a class="nav-item nav-link">Repositories</a>
+      <a
+        class="nav-item nav-link active"
+        routerLink="search"
+        routerLinkActive="active"
+        >Search</a
+      >
+      <a
+        class="nav-item nav-link active"
+        routerLink="profile"
+        routerLinkActive="active"
+        >Profile</a
+      >
+      <a class="nav-item nav-link" routerLink="repos" routerLinkActive="active"
+        >Repositories</a
+      >
     </div>
   </div>
 </nav>
